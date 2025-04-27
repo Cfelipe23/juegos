@@ -1,0 +1,54 @@
+.carta {
+  width: 120px;
+  height: 120px;
+  perspective: 1000px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.carta-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+  border-radius: 16px;
+}
+
+.carta-inner.volteada {
+  transform: rotateY(180deg);
+}
+
+.carta-front,
+.carta-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* Cara trasera con ❓ (lo que se ve primero) */
+.carta-back {
+  background: linear-gradient(135deg, #f8bbd0, #f48fb1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.8rem;
+  color: white;
+  font-weight: bold;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Cara frontal con la imagen (solo se ve al voltear) */
+.carta-front {
+  transform: rotateY(180deg);
+}
+
+.carta-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}

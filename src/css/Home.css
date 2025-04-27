@@ -1,0 +1,220 @@
+/* Fondo general oscuro */
+body {
+  background-color: #181818;
+  color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+/* Header */
+.header {
+  background-color: #111;
+  color: #f0f0f0;
+  padding: 1rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.header-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  padding: 0;
+}
+
+/* Contenedor principal */
+.main-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.section-one {
+  position: relative;
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 1.4rem;
+}
+
+/* Imagen de fondo */
+.background-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.background-image-portada {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 75%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  mask-image: linear-gradient(to right, transparent 5%, black 100%);
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  mask-image: linear-gradient(to top, transparent 5%, black 100%);
+}
+
+/* Texto encima de la imagen */
+.text-content {
+  position: relative;
+  z-index: 3;
+  color: white;
+  padding: 2rem;
+  max-width: 600px;
+}
+
+.text-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.text-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: #ddd;
+}
+
+.play-btn {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  background-color: #c9403b;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.play-btn:hover {
+  background-color: #4338ca;
+  transform: scale(1.05);
+}
+
+/* Sección 2 - Carrusel */
+.section-two {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 1.4rem;
+
+}
+
+/* Cuadrado bonito con sombra */
+.pretty-square {
+  width: 240px;
+  height: 160px;
+  background-color: #7a72db2d;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-position 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-size: cover;
+  background-position: center;
+}
+
+.pretty-square:nth-child(1) {
+  background-image: url('https://via.placeholder.com/200x260');
+}
+
+.pretty-square:nth-child(2) {
+  background-image: url('https://via.placeholder.com/200x260');
+}
+
+.pretty-square:nth-child(3) {
+  background-image: url('https://via.placeholder.com/200x260');
+}
+
+.pretty-square:nth-child(4) {
+  background-image: url('https://via.placeholder.com/200x260');
+}
+
+.pretty-square:hover {
+
+  transform: translateY(-10px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5), 0 5px 10px rgba(0, 0, 0, 0.4);
+  background-position: center 5px;
+}
+
+.pretty-square::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  z-index: 1;
+}
+
+.game-title {
+  position: relative;
+  z-index: 4;
+  color: white;
+  padding: 1rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.pretty-square:hover .game-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Título de sección para mejor integración visual */
+.section-title {
+  width: 100%;
+  color: white;
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-align: left;
+  padding-left: 1rem;
+}
+
+
+@media (max-width: 768px) {
+  .section-two {
+    gap: 1rem;
+  }
+
+  .pretty-square {
+    width: 160px;
+    height: 220px;
+  }
+
+  .main-content {
+    padding: 1rem;
+    gap: 1rem;
+    /* Aún más cercano en móviles */
+  }
+}

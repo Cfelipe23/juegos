@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/juegos/static/css/main.991e594e.css",
+    "main.js": "/juegos/static/js/main.3f3e3ad9.js",
+    "static/media/click.png": "/juegos/static/media/click.3194f122bb1441a8b9db.png",
+    "static/media/banner.png": "/juegos/static/media/banner.9351f007a95e67368a6d.png",
+    "static/media/JuegoCartas.png": "/juegos/static/media/JuegoCartas.b7d4c14ca79c46a64563.png",
+    "static/media/coco.png": "/juegos/static/media/coco.cd16b959df1fce6d9713.png",
+    "static/media/uva.png": "/juegos/static/media/uva.bf24d3c9c6ec8550d8a6.png",
+    "static/media/banano.png": "/juegos/static/media/banano.8f134f93e084c0a521a2.png",
+    "static/media/cereza.png": "/juegos/static/media/cereza.3b8507bc2d42b37c67ef.png",
+    "static/media/pera.png": "/juegos/static/media/pera.1d1f631381a9a4e949ba.png",
+    "static/media/piña.png": "/juegos/static/media/piña.d1df728e88fd2f3aeee9.png",
+    "static/media/cabra.png": "/juegos/static/media/cabra.2d392c8666d2309542bd.png",
+    "static/media/fresa.png": "/juegos/static/media/fresa.9abfa45847a9c1daa584.png",
+    "static/media/vaca.png": "/juegos/static/media/vaca.cffd2ffe3fb447dc50bb.png",
+    "static/media/conejo.png": "/juegos/static/media/conejo.e096bb037943085e766c.png",
+    "static/media/sandia.png": "/juegos/static/media/sandia.1ca5b832ec74c0209909.png",
+    "static/media/oveja.png": "/juegos/static/media/oveja.fddd55deceee8b8ce225.png",
+    "static/media/naranja.png": "/juegos/static/media/naranja.069e72562a1fcfe8ec1f.png",
+    "static/media/gallina.png": "/juegos/static/media/gallina.5d5a289f1d6bd3f5256a.png",
+    "static/media/gallo.png": "/juegos/static/media/gallo.fa812884820ea6d862b8.png",
+    "static/media/cerdo.png": "/juegos/static/media/cerdo.67503e589ca6d9613020.png",
+    "static/media/pato.png": "/juegos/static/media/pato.ddbc99d2c6471ea1eb89.png",
+    "static/media/manzana.png": "/juegos/static/media/manzana.93123d5c140c80134de5.png",
+    "static/media/hamster.jpg": "/juegos/static/media/hamster.ac84fc817c4fb2cd6796.jpg",
+    "static/media/imagen_perfil_2.jpeg": "/juegos/static/media/imagen_perfil_2.911aac001df0dd4b766f.jpeg",
+    "static/media/imagen_perfil_3.jpeg": "/juegos/static/media/imagen_perfil_3.0fac7c3f2c38ade6d9c9.jpeg",
+    "static/media/tortuga.jpg": "/juegos/static/media/tortuga.7cbe1221e01047d2e6ef.jpg",
+    "static/media/super-ping-pong.png": "/juegos/static/media/super-ping-pong.4fed7df47792b451f667.png",
+    "index.html": "/juegos/index.html",
+    "main.991e594e.css.map": "/juegos/static/css/main.991e594e.css.map",
+    "main.3f3e3ad9.js.map": "/juegos/static/js/main.3f3e3ad9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.991e594e.css",
+    "static/js/main.3f3e3ad9.js"
+  ]
+}

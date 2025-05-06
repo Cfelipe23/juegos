@@ -21,15 +21,15 @@ function GameCollection() {
     },
     {
       id: 3,
-      title: 'Ping Pong',
+      title: 'Juego de Ping Pong',
       image: pingpong,
       path: '/PingPong'
     },
     {
       id: 4,
-      title: 'Juego 4',
+      title: 'Juego de la Serpiente',
       image: null,
-      path: '/Juego4'
+      path: '/JuegoSerpiente'
     }
   ];
 

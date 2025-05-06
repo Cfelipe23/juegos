@@ -1,77 +1,109 @@
+import Cabecera from '../../components/Cabecera';
+import Encabezado from "./components/Encabezado";
+import TableroJuego from "./components/TableroJuego";
+import Ranking from "./components/Ranking";
 
-import Cabezera from "../../components/Cabecera";
+import cuadrado1 from './imagenes/imagen_perfil_1.jpeg';
+import cuadrado2 from './imagenes/imagen_perfil_2.jpeg';
+import cuadrado3 from './imagenes/imagen_perfil_3.jpeg';
+
 import React, { useState, useEffect } from 'react';
-import cuadrado from '../../img/Blinky_main_image_large.webp';
-import './App.css';
-
-
+import './Cuadrado.css';
 
 function Cuadrado() {
-  const [ puntos, setPuntos ] = useState( 0 ); // Estado para la puntuación
-  const [ posicion, setPosicion ] = useState( { top: '50%', left: '50%' } );
-  //Estado para la posición del cuadrado;
+  const imagenesDisponibles = [
+    { nombre: 'Ardilla Rokera', src: cuadrado1 },
+    { nombre: 'Pollo Rockero', src: cuadrado2 },
+    { nombre: 'Perro Rockero', src: cuadrado3 },
+  ];
 
-  const [ tiempo, setTiempo ] = useState( 30 ); // Estado para el temporizador ( 30 segundos)
-  const [ jugando, setJugando ] = useState( false ); // Estado para saber si el juego está en marcha
-  // Función para iniciar el juego
+  const [ puntos, setPuntos ] = useState( 0 );
+  const [ posicion, setPosicion ] = useState( { top: '50%', left: '50%' } );
+  const [ tiempo, setTiempo ] = useState( 30 );
+  const [ jugando, setJugando ] = useState( false );
+  const [ ranking, setRanking ] = useState( [] );
+  const [ imagenSeleccionada, setImagenSeleccionada ] = useState( cuadrado1 );
+  const [ nombreJugador, setNombreJugador ] = useState( '' );
+
+  useEffect( () => {
+    const rankingGuardado = JSON.parse( localStorage.getItem( 'ranking' ) );
+    if ( rankingGuardado ) {
+      setRanking( rankingGuardado );
+    }
+  }, [] );
+
+  useEffect( () => {
+    if ( jugando && tiempo > 0 ) {
+      const timer = setInterval( () => setTiempo( prev => prev - 1 ), 1000 );
+      return () => clearInterval( timer );
+    } else if ( jugando && tiempo === 0 ) {
+      finalizarJuego();
+    }
+  }, [ jugando, tiempo ] );
+
   const iniciarJuego = () => {
+    if ( !nombreJugador.trim() ) {
+      alert( 'Por favor ingresa tu nombre antes de jugar.' );
+      return;
+    }
     setPuntos( 0 );
     setTiempo( 30 );
     setJugando( true );
-    moverCuadrado(); // Mueve el cuadrado al iniciar el juego
+    moverCuadrado();
   };
-  // Función para mover el cuadrado a una posición aleatoria
+
+  const finalizarJuego = () => {
+    setJugando( false );
+    const nuevoJugador = { nombre: nombreJugador, puntos, tiempoUsado: 30 - tiempo };
+    const nuevoRanking = [ ...ranking, nuevoJugador ]
+      .sort( ( a, b ) => b.puntos - a.puntos || a.tiempo - b.tiempo )
+      .slice( 0, 5 );
+    setRanking( nuevoRanking );
+    localStorage.setItem( 'ranking', JSON.stringify( nuevoRanking ) );
+  };
+
   const moverCuadrado = () => {
-    const top = Math.random() * 90 + '%'; // Genera una posición aleatoria
-    const left = Math.random() * 90 + '%';
+    const top = Math.random() * 70 + 10 + '%';
+    const left = Math.random() * 70 + 10 + '%';
     setPosicion( { top, left } );
   };
-  // Manejar el clic en el cuadrado
+
   const manejarClick = () => {
-    setPuntos( puntos + 1 ); // Incrementa los puntos
-    moverCuadrado(); // Mueve el cuadrado a una nueva posición
+    setPuntos( prev => prev + 1 );
+    moverCuadrado();
   };
-  // Hook para controlar el temporizador
-  useEffect( () => {
-    if ( jugando && tiempo > 0 ) {
-      const timer = setInterval( () => setTiempo( tiempo - 1 ), 1000 );// Reduce el tiempo en 1 cada segundo
-      return () => clearInterval( timer ); // Limpia el intervalo al desmontar
-    } else if ( tiempo === 0 ) {
-      setJugando( false ); // Finaliza el juego cuando el tiempo llega a 0
-    }
-  }, [ jugando, tiempo ] );
+
+
   return (
     <>
-      <Cabezera />
+      <Cabecera />
       <div className="container-cuadrado">
         <h1>¡Atrapa el cuadrado!</h1>
-        <p>Puntuación: { puntos }</p>
-        <p>Tiempo restante: { tiempo } segundos</p>
-        { jugando ? (
+        <Ranking ranking={ ranking } />
+        <Encabezado
+          nombreJugador={ nombreJugador }
+          setNombreJugador={ setNombreJugador }
+          imagenSeleccionada={ imagenSeleccionada }
+          setImagenSeleccionada={ setImagenSeleccionada }
+          jugando={ jugando }
+          imagenes={ imagenesDisponibles }
+        />
 
-          <img
-            src={ cuadrado }
-            alt="Cuadrado"
-            className="cuadrado"
-            style={ {
-              position: 'absolute', top: posicion.top, left:
-
-                posicion.left
-            } }
-
-            onClick={ manejarClick }
-          ></img>
+        <TableroJuego
+          puntos={ puntos }
+          tiempo={ tiempo }
+          jugando={ jugando }
+          iniciarJuego={ iniciarJuego }
+          manejarClick={ manejarClick }
+          imagenSeleccionada={ imagenSeleccionada }
+          posicion={ posicion }
+        />
 
 
-        ) : (
-          <button onClick={ iniciarJuego }>Iniciar Juego</button>
-        ) }
-        { !jugando && tiempo === 0 && <h2>¡Juego terminado! Puntuación final:
-          { puntos }</h2> }
       </div>
+
     </>
   );
-
-
 }
+
 export default Cuadrado;

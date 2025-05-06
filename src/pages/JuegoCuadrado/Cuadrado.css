@@ -1,0 +1,41 @@
+.container-cuadrado {
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #282c34;
+  color: white;
+  height: 80vh;
+  width: 100vw;
+  overflow: hidden;
+  padding-top: 50px;
+
+}
+
+button {
+  background-color: #61dafb;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
+.selector-imagenes {
+  margin: 10px 0;
+}
+
+.selector-imagenes label {
+  margin-right: 10px;
+}
+
+input[type="text"] {
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: none;
+}

@@ -1,0 +1,149 @@
+:root {
+  --color-fondo: #111;
+  --color-serpiente: #4caf50;
+  --color-comida: #e91e63;
+  --color-tablero: #222;
+  --color-texto: #fff;
+  --sombra: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+
+/* Contenedor principal que encapsula todos los estilos */
+
+.juego-serpiente-container {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Todos los estilos específicos del juego como descendientes del contenedor */
+.juego-serpiente-container .contenedor-juego {
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.juego-serpiente-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.juego-serpiente-container .inicio input {
+  padding: 10px;
+  font-size: 1rem;
+  margin-right: 10px;
+  width: 60%;
+  max-width: 300px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.juego-serpiente-container .inicio button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: var(--color-serpiente);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.juego-serpiente-container .inicio button:hover {
+  background-color: #388e3c;
+}
+
+.juego-serpiente-container .tablero {
+  display: inline-grid;
+  grid-template-columns: repeat(20, 22px);
+  grid-template-rows: repeat(20, 22px);
+  gap: 0px;
+  background-color: var(--color-tablero);
+  padding: 10px;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: var(--sombra);
+  width: fit-content;
+}
+
+.juego-serpiente-container .celda {
+  width: 23px;
+  height: 23px;
+  background-color: #333;
+  border-radius: 4px;
+  border: 1px solid var(--color-tablero);
+  box-sizing: border-box;
+}
+
+.juego-serpiente-container .serpiente {
+  background-color: var(--color-serpiente);
+}
+
+.juego-serpiente-container .comida {
+  background-color: var(--color-comida);
+  animation: pulso 1s infinite;
+}
+
+@keyframes pulso {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.juego-serpiente-container .fin-juego {
+  margin-top: 30px;
+}
+
+.juego-serpiente-container .fin-juego button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.juego-serpiente-container .fin-juego button:hover {
+  background-color: #1976d2;
+}
+
+.juego-serpiente-container .ranking {
+  background-color: #1e1e1e;
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: var(--sombra);
+  text-align: left;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.juego-serpiente-container .ranking ol {
+  padding-left: 20px;
+}
+
+.juego-serpiente-container .ranking li {
+  margin: 5px 0;
+  font-weight: bold;
+}

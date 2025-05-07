@@ -3,6 +3,7 @@ import CartaJuego from './CartaJuego';
 import click from '../img/click.png';
 import cartas from '../img/JuegoCartas.png';
 import pingpong from '../img/super-ping-pong.png';
+import serpiente from '../img/JuegoSerpiente.png';
 
 function GameCollection() {
   const games = [
@@ -28,7 +29,7 @@ function GameCollection() {
     {
       id: 4,
       title: 'Juego de la Serpiente',
-      image: null,
+      image: serpiente,
       path: '/JuegoSerpiente'
     }
   ];

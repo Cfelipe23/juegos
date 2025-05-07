@@ -1,11 +1,11 @@
-.ranking {
+.ranking-cuadrado {
   position: fixed;
   top: 20px;
   right: 0;
   width: 250px;
   max-width: 90%;
   max-height: 400px;
-  background-color: white;
+  background-color: rgba(203, 236, 190, 0.521);
   color: black;
   padding: 20px;
   transform: translateX(100%);
@@ -17,7 +17,7 @@
   border-radius: 8px 0 0 8px;
 }
 
-.ranking.open {
+.ranking-cuadrado.open {
   transform: translateX(0);
   pointer-events: auto;
   z-index: 10;

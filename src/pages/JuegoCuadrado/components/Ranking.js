@@ -14,7 +14,7 @@ function Ranking( { ranking } ) {
         { abierto ? 'Cerrar Ranking' : 'Abrir Ranking' }
       </button>
 
-      <div className={ `ranking ${ abierto ? 'open' : '' }` }>
+      <div className={ `ranking-cuadrado ${ abierto ? 'open' : '' }` }>
         <h2>Ranking</h2>
         <ul>
           { ranking.map( ( jugador, index ) => (

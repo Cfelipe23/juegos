@@ -32,7 +32,10 @@ const JuegoSerpiente = () => {
   //que captura las flechas del teclado para cambiar de direccion de manera correcta
   useEffect( () => {
     const manejarTecla = e => {
-
+      //evita que al presionar las flechas se mueva la pantalla
+      if ( e.key === 'ArrowUp' || e.key === 'ArrowDown' || e.key === 'ArrowLeft' || e.key === 'ArrowRight' ) {
+        e.preventDefault();
+      }
       switch ( e.key ) {
         case 'ArrowUp': if ( direccion !== "ABAJO" ) setDireccion( "ARRIBA" ); break;
         case 'ArrowDown': if ( direccion !== "ARRIBA" ) setDireccion( "ABAJO" ); break;

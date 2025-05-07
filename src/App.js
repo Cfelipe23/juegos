@@ -10,9 +10,9 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={ <Home /> } />
-      <Route path="/Juegode_Cuadro" element={ <Cuadrado /> } />
-      <Route path="/Juego_deMemoria" element={ <JuegodeMemoria /> } />
-      <Route path="/PingPong" element={ <PingPong /> } />
+      <Route path="/JuegodeCuadro" element={ <Cuadrado /> } />
+      <Route path="/JuegodeMemoria" element={ <JuegodeMemoria /> } />
+      <Route path="/JuegoPingPong" element={ <PingPong /> } />
       <Route path="/JuegoSerpiente" element={ <JuegoSerpiente /> } />
     </Routes>
   );

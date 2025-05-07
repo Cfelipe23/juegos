@@ -139,22 +139,6 @@ body {
   background-position: center;
 }
 
-.pretty-square:nth-child(1) {
-  background-image: url('https://via.placeholder.com/200x260');
-}
-
-.pretty-square:nth-child(2) {
-  background-image: url('https://via.placeholder.com/200x260');
-}
-
-.pretty-square:nth-child(3) {
-  background-image: url('https://via.placeholder.com/200x260');
-}
-
-.pretty-square:nth-child(4) {
-  background-image: url('https://via.placeholder.com/200x260');
-}
-
 .pretty-square:hover {
 
   transform: translateY(-10px);

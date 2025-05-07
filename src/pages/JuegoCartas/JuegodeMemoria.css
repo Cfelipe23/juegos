@@ -11,23 +11,25 @@
   position: relative;
   overflow: hidden;
   animation: fadeIn 2s ease-out;
+
+  h1 {
+    font-size: 3.5rem;
+    color: #d81b60;
+    margin-bottom: 40px;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    letter-spacing: 3px;
+    animation: fadeIn 2s ease-out;
+  }
+
+  p {
+    font-size: 1.5rem;
+    color: #ad1457;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  }
 }
 
-h1 {
-  font-size: 3.5rem;
-  color: #d81b60;
-  margin-bottom: 40px;
-  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-  letter-spacing: 3px;
-  animation: fadeIn 2s ease-out;
-}
 
-p {
-  font-size: 1.5rem;
-  color: #ad1457;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-}
 
 .boton-reiniciar {
   background: linear-gradient(135deg, #f06292, #ec407a);

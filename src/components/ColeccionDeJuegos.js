@@ -11,20 +11,20 @@ function GameCollection() {
       id: 1,
       title: 'Juego de Cuadro',
       image: click,
-      path: '/Juegode_Cuadro'
+      path: '/JuegodeCuadro'
     },
     {
       id: 2,
       title: 'Juego de Memoria',
       image: cartas,
-      path: '/Juego_deMemoria'
+      path: '/JuegodeMemoria'
 
     },
     {
       id: 3,
       title: 'Juego de Ping Pong',
       image: pingpong,
-      path: '/PingPong'
+      path: '/JuegoPingPong'
     },
     {
       id: 4,

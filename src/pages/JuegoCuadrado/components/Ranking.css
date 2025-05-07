@@ -17,16 +17,7 @@
   border-radius: 8px 0 0 8px;
 }
 
-.ranking-cuadrado.open {
-  transform: translateX(0);
-  pointer-events: auto;
-  z-index: 10;
-}
-
-.boton-ranking {
-  position: fixed;
-  top: 20px;
-  right: 20px;
+.ranking-cuadrado-btn {
   background-color: #61dafb;
   color: black;
   border: none;
@@ -36,4 +27,27 @@
   cursor: pointer;
   border-radius: 8px;
   z-index: 11;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  pointer-events: auto;
+}
+
+.ranking-cuadrado-btn.open {
+  background-color: #61dafb;
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transform: scale(0.75);
+  margin: 0 0 0 0;
+
+
+}
+
+
+.ranking-cuadrado.open {
+  transform: translateX(0);
+  pointer-events: auto;
+  z-index: 10;
 }

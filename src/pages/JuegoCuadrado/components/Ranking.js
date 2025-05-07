@@ -10,11 +10,11 @@ function Ranking( { ranking } ) {
 
   return (
     <>
-      <button className="boton-ranking" onClick={ toggleRanking }>
-        { abierto ? 'Cerrar Ranking' : 'Abrir Ranking' }
+      <button className={ `ranking-cuadrado-btn${ abierto ? ' open' : '' }` } onClick={ toggleRanking }>
+        { abierto ? 'X' : 'Abrir Ranking' }
       </button>
 
-      <div className={ `ranking-cuadrado ${ abierto ? 'open' : '' }` }>
+      <div className={ `ranking-cuadrado${ abierto ? ' open' : '' }` }>
         <h2>Ranking</h2>
         <ul>
           { ranking.map( ( jugador, index ) => (

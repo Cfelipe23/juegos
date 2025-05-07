@@ -1,5 +1,5 @@
 import React from 'react';
-
+import "./Encabezado.css";
 function Encabezado( { nombreJugador, setNombreJugador, imagenSeleccionada, setImagenSeleccionada, jugando, imagenes } ) {
   return (
     <div className="encabezado">

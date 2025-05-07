@@ -1,6 +1,7 @@
 
 //componestes principales del juego
 import React, { useState, useEffect, useRef } from 'react';
+import Cabecera from '../../components/Cabecera';
 import Inicio from './componentes/Inicio';
 import Puntos from './componentes/Puntos';
 import Tablero from './componentes/Tablero';
@@ -149,44 +150,47 @@ const JuegoSerpiente = () => {
 
 
   return (
-    <div className="juego-serpiente-container"> {/* Contenedor principal agregado */ }
-      <div
-        className="contenedor-juego"
-        ref={ contenedorRef }
-        tabIndex={ 0 }
-        style={ { outline: 'none' } }
-      >
-        <h1>Juego de la Culebrita</h1>
-        { !jugando && !terminado && (
-          <Inicio
-            nombre={ nombreJugador }
-            onChange={ setNombreJugador }
-            onStart={ iniciarJuego }
-          />
-        ) }
-
-        { jugando && !terminado && (
-          <>
-            <Puntos puntos={ puntos } />
-            <Tablero
-              filas={ FILAS }
-              columnas={ COLUMNAS }
-              serpiente={ serpiente }
-              comida={ comida }
+    <>
+      <Cabecera />
+      <div className="juego-serpiente-container"> {/* Contenedor principal agregado */ }
+        <div
+          className="contenedor-juego"
+          ref={ contenedorRef }
+          tabIndex={ 0 }
+          style={ { outline: 'none' } }
+        >
+          <h1>Juego de la Culebrita</h1>
+          { !jugando && !terminado && (
+            <Inicio
+              nombre={ nombreJugador }
+              onChange={ setNombreJugador }
+              onStart={ iniciarJuego }
             />
-          </>
-        ) }
+          ) }
 
-        { terminado && (
-          <FinJuego
-            nombre={ nombreJugador }
-            puntos={ puntos }
-            ranking={ ranking }
-            onRestart={ reiniciarJuego }
-          />
-        ) }
+          { jugando && !terminado && (
+            <>
+              <Puntos puntos={ puntos } />
+              <Tablero
+                filas={ FILAS }
+                columnas={ COLUMNAS }
+                serpiente={ serpiente }
+                comida={ comida }
+              />
+            </>
+          ) }
+
+          { terminado && (
+            <FinJuego
+              nombre={ nombreJugador }
+              puntos={ puntos }
+              ranking={ ranking }
+              onRestart={ reiniciarJuego }
+            />
+          ) }
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
